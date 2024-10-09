@@ -1,35 +1,22 @@
-// Sample dataset
-const songs = [
-    { title: "Song A", artist: "Artist 1" },
-    { title: "Song B", artist: "Artist 2" },
-    { title: "Song C", artist: "Artist 1" },
-    { title: "Song D", artist: "Artist 3" },
-    { title: "Song E", artist: "Artist 2" },
-    // Add more songs as needed
-];
+// Function to play the selected song
+function playSong(songFile) {
+    var audioPlayer = document.getElementById('audioPlayer');
+    var audioSource = document.getElementById('audioSource');
+    
+    // Change the source of the audio player to the selected song
+    audioSource.src = 'audio/' + songFile;
+    audioPlayer.load(); // Reload the audio with the new source
+    audioPlayer.play(); // Play the selected song
+}
 
+// Example function for the search functionality (can be expanded)
 function searchSongs() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
-    const resultsContainer = document.getElementById('searchResults');
-
-    // Clear previous results
-    resultsContainer.innerHTML = '';
-
-    // Filter songs based on input
-    const filteredSongs = songs.filter(song => 
-        song.title.toLowerCase().includes(input) || 
-        song.artist.toLowerCase().includes(input)
-    );
-
-    // Display results
-    if (filteredSongs.length > 0) {
-        filteredSongs.forEach(song => {
-            const songElement = document.createElement('div');
-            songElement.classList.add('song-result');
-            songElement.innerHTML = `<strong>${song.title}</strong> by ${song.artist}`;
-            resultsContainer.appendChild(songElement);
-        });
-    } else {
-        resultsContainer.innerHTML = '<p>No results found</p>';
-    }
+    var searchInput = document.getElementById('searchInput').value;
+    var searchResults = document.getElementById('searchResults');
+    
+    // For simplicity, assume you have a static array of songs for search demo
+    var songs = ['Song 1', 'Song 2', 'Song 3', 'Song 4'];
+    var result = songs.filter(song => song.toLowerCase().includes(searchInput.toLowerCase()));
+    
+    searchResults.innerHTML = result.length ? 'Results: ' + result.join(', ') : 'No results found.';
 }
