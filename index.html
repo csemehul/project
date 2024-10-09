@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendation System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Spotify Clone</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#recommendations">Recommendations</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#team">Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="search-section">
+            <h2>Search for Your Favorite Songs</h2>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for a song...">
+                <button onclick="searchSongs()">Search</button>
+            </div>
+            <div id="searchResults"></div>
+        </section>
+
+        <section id="recommendations">
+            <h2>Your Music Recommendations</h2>
+            <div id="recommendationList">
+                <!-- Song recommendations will be listed here -->
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About This Project</h2>
+            <p>This system uses Machine Learning algorithms to recommend music based on user preferences. Explore new songs, discover your next favorite tune, and enjoy music tailored just for you.</p>
+        </section>
+
+        <section id="team">
+            <h2>Project Team</h2>
+            <ul>
+                <li>Roshan Sah</li>
+                <li>Om Yadav</li>
+                <li>Ajit Kushwaha</li>
+                <li>Jay Ram Yadav</li>
+            </ul>
+        </section>
+
+        <section class="audio-player">
+            <h2>Background Music</h2>
+            <audio controls>
+                <source src="audio/background-music.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Music Recommendation System</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
