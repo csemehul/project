@@ -34,7 +34,12 @@
         <section id="recommendations">
             <h2>Your Music Recommendations</h2>
             <div id="recommendationList">
-                <!-- Song recommendations will be listed here -->
+                <ul>
+                    <li><button onclick="playSong('song1.mp3')">Song 1</button></li>
+                    <li><button onclick="playSong('song2.mp3')">Song 2</button></li>
+                    <li><button onclick="playSong('song3.mp3')">Song 3</button></li>
+                    <li><button onclick="playSong('song4.mp3')">Song 4</button></li>
+                </ul>
             </div>
         </section>
 
@@ -54,9 +59,9 @@
         </section>
 
         <section class="audio-player">
-            <h2>Background Music</h2>
-            <audio controls>
-                <source src="audio/background-music.mp3" type="audio/mpeg">
+            <h2>Now Playing</h2>
+            <audio id="audioPlayer" controls>
+                <source id="audioSource" src="audio/song1.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </section>
